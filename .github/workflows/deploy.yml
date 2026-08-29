@@ -1,0 +1,12 @@
+name: deploy docker
+on: 
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: deploy through docker compose up
+        uses: docker/setup-compose-action@v2
+        with:
+          version: latest
