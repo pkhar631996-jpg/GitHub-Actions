@@ -11,13 +11,15 @@ permissions:
   id-token: write            
 jobs:
     deploy:
+        environment:
+            ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
               
             - name: setup Gihub pages
-              uses: actions/configure-pages@v6
+              uses: actions/configure-pages@v4
               
             - name: Upload to GitHub Pages
               uses: actions/upload-pages-artifact@v4
