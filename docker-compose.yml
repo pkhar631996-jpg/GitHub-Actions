@@ -1,5 +1,5 @@
 services:
   web:
-    image: app:latest
+    image: ${vars.DOCKERHUB_USER}/app:latest
     ports:
       - "80:80"
