@@ -10,3 +10,5 @@ jobs:
         uses: docker/setup-compose-action@v2
         with:
           version: latest
+      - name: Run the docker compose
+        run: docker compose up --build -d
