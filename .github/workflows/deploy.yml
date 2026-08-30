@@ -5,6 +5,8 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
+    env:
+      DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
     steps:
       - name: deploy through docker compose up
         uses: docker/setup-compose-action@v2
