@@ -8,6 +8,8 @@ jobs:
     env:
       DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
       - name: deploy through docker compose up
         uses: docker/setup-compose-action@v2
         with:
