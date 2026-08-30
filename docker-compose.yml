@@ -1,5 +1,5 @@
 services:
   web:
-    image: ${DOCKERHUB_USER}/app:latest
+    image: pkhar/app:latest
     ports:
       - "80:80"
