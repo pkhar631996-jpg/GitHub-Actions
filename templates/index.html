@@ -3,111 +3,499 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DevOps Zero To Hero</title>
+<meta name="description" content="Wipro AI Academy learning portal for AI, Cloud and GitHub skills.">
+<title>Wipro AI Academy</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-color:#e0e0e0
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
-.container{text-align:center;padding:2rem;max-width:640px}
-
-h1{
-font-size:2.5rem;
-background:linear-gradient(90deg,#00d2ff,#7b2ff7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:.5rem
+html {
+    scroll-behavior: smooth;
 }
 
-.badge{
-display:inline-block;
-margin:1rem 0;
-padding:.4rem 1.2rem;
-border:1px solid #7b2ff7;
-border-radius:999px;
-font-size:.9rem;
-color:#c4b5fd
+body {
+    background: #0b1220;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
-.pipeline{
-margin-bottom:1.5rem;
-font-size:.9rem;
-color:#9ca3af
+header {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    text-align: center;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(97, 218, 251, 0.22), transparent 32%),
+        radial-gradient(circle at 80% 30%, rgba(111, 44, 255, 0.30), transparent 34%),
+        linear-gradient(135deg, #4217a8, #0055ff 55%, #00a6c8);
 }
 
-.cards{
-display:flex;
-gap:1rem;
-justify-content:center;
-flex-wrap:wrap
+.hero-content {
+    max-width: 950px;
 }
 
-.card{
-background:rgba(255,255,255,.06);
-border:1px solid rgba(255,255,255,.1);
-border-radius:12px;
-padding:1.4rem;
-min-width:150px
+.hero-badge {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.10);
+    font-size: 0.90rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
 }
 
-.card span{
-display:block;
-font-size:.7rem;
-color:#9ca3af;
-margin-bottom:.4rem;
-letter-spacing:.1em
+header h1 {
+    margin-bottom: 18px;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1.05;
 }
 
-.card strong{
-font-size:1.2rem;
-color:#f9fafb
+header p {
+    max-width: 800px;
+    margin: auto;
+    color: #eef7ff;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-primary {
+    background: #ffffff;
+    color: #1325a8;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.button-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(11, 18, 32, 0.25);
+    color: #ffffff;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 5%;
+    border-bottom: 1px solid #243754;
+    background: rgba(17, 24, 39, 0.96);
+    backdrop-filter: blur(12px);
+}
+
+nav a {
+    padding: 8px 13px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: #1d2b43;
+    color: #61dafb;
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.section-muted {
+    background: #0f1829;
+}
+
+.section-title {
+    margin-bottom: 12px;
+    text-align: center;
+    color: #61dafb;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.section-intro {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    text-align: center;
+    color: #bfcbe0;
+}
+
+.banner {
+    max-width: 1150px;
+    margin: auto;
+    padding: 42px;
+    border: 1px solid #263852;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #111827, #15253f);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.banner h2 {
+    margin-bottom: 14px;
+    color: #61dafb;
+}
+
+.banner > p {
+    max-width: 850px;
+    margin: auto;
+    color: #c8d1dc;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+    margin-top: 32px;
+}
+
+.stat {
+    padding: 22px;
+    border: 1px solid #2b4263;
+    border-radius: 15px;
+    background: #162033;
+}
+
+.stat h3 {
+    color: #61dafb;
+    font-size: 1.8rem;
+}
+
+.stat p {
+    color: #aebbd0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    min-height: 230px;
+    padding: 27px;
+    border: 1px solid #263852;
+    border-radius: 16px;
+    background: #162033;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #61dafb, #7a5cff);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #4f76a8;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+}
+
+.card-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    place-items: center;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #214369, #34236e);
+    color: #61dafb;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: #61dafb;
+}
+
+.card p {
+    color: #c8d1dc;
+}
+
+.leader-note {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.35fr) 1fr;
+    gap: 30px;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    padding: 35px;
+    border: 1px solid #263852;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #17243a, #111827);
+}
+
+.leader-mark {
+    display: grid;
+    min-height: 190px;
+    place-items: center;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #6f2cff, #0055ff);
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.leader-note blockquote {
+    margin-bottom: 16px;
+    color: #d8e3f3;
+    font-size: 1.1rem;
+}
+
+.leader-note strong {
+    color: #61dafb;
+}
+
+footer {
+    padding: 28px 8%;
+    border-top: 1px solid #263852;
+    background: #090f1a;
+    color: #aebbd0;
+    text-align: center;
+}
+
+@media (max-width: 720px) {
+    header {
+        min-height: auto;
+        padding: 70px 7%;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .banner {
+        padding: 28px 20px;
+    }
+
+    .leader-note {
+        grid-template-columns: 1fr;
+    }
+
+    .leader-mark {
+        min-height: 120px;
+    }
 }
 </style>
 </head>
 
 <body>
+<nav aria-label="Primary navigation">
+    <a href="#home">Home</a>
+    <a href="#paths">Learning Paths</a>
+    <a href="#why">Why AI Academy</a>
+    <a href="#leadership">Leadership</a>
+</nav>
 
-<div class="container">
+<header id="home">
+    <div class="hero-content">
+        <span class="hero-badge">TALENT EMPOWERMENT AT WIPRO</span>
+        <h1>Wipro AI Academy</h1>
+        <p>
+            Empowering Every Mind, Elevating Every Role through Artificial
+            Intelligence, Cloud Computing, and GitHub Excellence.
+        </p>
+        <div class="hero-actions">
+            <a class="button button-primary" href="#paths">Explore Learning Paths</a>
+            <a class="button button-secondary" href="#why">Why It Matters</a>
+        </div>
+    </div>
+</header>
 
-<h1>DevOps Zero To Hero [DevSecOps Live]</h1>
-<div class="badge">Josh Batch 10 (USA Edition BOOOM)</div>
+<main>
+    <section aria-labelledby="future-ready-title">
+        <div class="banner">
+            <h2 id="future-ready-title">Build a Future-Ready Workforce</h2>
+            <p>
+                AI Academy brings together AI, Cloud, and GitHub learning paths
+                to help associates strengthen technical capabilities, support
+                innovation, and grow through continuous learning.
+            </p>
 
-<div class="pipeline">
-Built • Tested • Linted • Deployed via GitHub Actions
-</div>
+            <div class="stats">
+                <div class="stat">
+                    <h3>AI</h3>
+                    <p>Generative AI, machine learning, and responsible AI</p>
+                </div>
+                <div class="stat">
+                    <h3>Cloud</h3>
+                    <p>Azure, AWS, Google Cloud, and platform engineering</p>
+                </div>
+                <div class="stat">
+                    <h3>GitHub</h3>
+                    <p>DevOps, automation, security, and collaborative delivery</p>
+                </div>
+                <div class="stat">
+                    <h3>Growth</h3>
+                    <p>Role-based pathways from foundations to advanced skills</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="cards">
-<div class="card">
-<span>Framework</span>
-<strong>Flask 3.1</strong>
-</div>
+    <section id="paths" class="section-muted" aria-labelledby="paths-title">
+        <h2 id="paths-title" class="section-title">Choose Your Learning Path</h2>
+        <p class="section-intro">
+            Explore structured pathways aligned to technology interests,
+            professional roles, and learning goals.
+        </p>
 
-<div class="card">
-<span>Runtime</span>
-<strong>Python 3.14</strong>
-</div>
+        <div class="cards">
+            <article class="card">
+                <div class="card-icon">AI</div>
+                <h3>Artificial Intelligence</h3>
+                <p>
+                    Explore AI fundamentals, Generative AI, machine learning,
+                    prompt engineering, responsible AI, and AI agents.
+                </p>
+            </article>
 
-<div class="card">
-<span>Deploy</span>
-<strong>AWS ECS</strong>
-</div>
+            <article class="card">
+                <div class="card-icon">CL</div>
+                <h3>Cloud Computing</h3>
+                <p>
+                    Develop cloud skills across Azure, AWS, Google Cloud,
+                    architecture, platform engineering, operations, and FinOps.
+                </p>
+            </article>
 
-<div class="card">
-<span>CI/CD</span>
-<strong>GitHub Actions</strong>
-</div>
-</div>
+            <article class="card">
+                <div class="card-icon">GH</div>
+                <h3>GitHub Center of Excellence</h3>
+                <p>
+                    Learn GitHub Actions, GitHub Copilot, Advanced Security,
+                    CI/CD, collaborative development, and DevOps practices.
+                </p>
+            </article>
 
-</div>
+            <article class="card">
+                <div class="card-icon">LP</div>
+                <h3>Role-Based Learning</h3>
+                <p>
+                    Follow curricula aligned to engineering, platform,
+                    architecture, management, and specialist career paths.
+                </p>
+            </article>
 
+            <article class="card">
+                <div class="card-icon">CE</div>
+                <h3>Certification Enablement</h3>
+                <p>
+                    Organize preparation journeys around recognized technology
+                    certifications and practical skill development.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">EV</div>
+                <h3>Events and Community</h3>
+                <p>
+                    Encourage knowledge sharing through technical sessions,
+                    learning events, expert talks, and peer collaboration.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section id="why" aria-labelledby="why-title">
+        <h2 id="why-title" class="section-title">Why AI Academy?</h2>
+        <p class="section-intro">
+            Continuous learning helps teams respond to technological change,
+            connect expertise, and create a shared culture of innovation.
+        </p>
+
+        <div class="cards">
+            <article class="card">
+                <div class="card-icon">01</div>
+                <h3>Continuous Skilling</h3>
+                <p>
+                    Build learning habits through curated pathways that range
+                    from foundational concepts to advanced applications.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">02</div>
+                <h3>Diverse Learning Needs</h3>
+                <p>
+                    Support learners across experience levels, including new
+                    campus hires, technical professionals, and senior leaders.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">03</div>
+                <h3>Connected Innovation</h3>
+                <p>
+                    Bring together AI, Cloud, and GitHub capabilities to foster
+                    curiosity, agility, collaboration, and innovation.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section id="leadership" class="section-muted" aria-labelledby="leadership-title">
+        <h2 id="leadership-title" class="section-title">Academy Vision</h2>
+        <p class="section-intro">
+            A unified learning experience designed to prepare associates for a
+            rapidly evolving digital landscape.
+        </p>
+
+        <div class="leader-note">
+            <div class="leader-mark" aria-hidden="true">AI</div>
+            <div>
+                <blockquote>
+                    “Our mission goes beyond conventional training. We are
+                    committed to cultivating a future-ready workforce through
+                    learning pathways spanning foundational concepts to advanced
+                    applications.”
+                </blockquote>
+                <strong>Wipro AI Academy</strong>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Wipro AI Academy. Empowering Every Mind, Elevating Every Role.</p>
+</footer>
 </body>
 </html>
